@@ -1,0 +1,99 @@
+:root {
+  --bg-colour-1: #eee;
+  --bg-colour-2: #fff;
+  --bg-colour-3: #eee;
+  --bg-colour-4: #ddd;
+
+  --fg-colour: #000;
+
+  --ac-colour: 0, 0, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-colour-1: #000;
+  }
+}
+
+* {
+  transition: all 0.15s ease;
+}
+
+body {
+  background: var(--bg-colour-1);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--fg-colour);
+  font-size: 110%;
+}
+
+.container {
+  background-color: var(--bg-colour-2);
+  width: 85%;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);;
+}
+
+h1 {
+  text-align: center;
+}
+
+hr {
+  border: 2px solid var(--fg-colour);;
+  margin: 2.5% 5%;
+  border-radius: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: 10px;
+  margin: 20px 15%;;
+}
+
+.grid * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-colour-3);
+  border-radius: 10px;
+}
+
+.grid *:not(:has(input, select)) {
+  padding: 5%;
+}
+
+.header {
+  font-weight: bold;
+  background-color: var(--bg-colour-4);
+}
+
+input, select {
+  border: 2px solid rgba(var(--ac-colour), 0.1);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+}
+
+input:hover, select:hover {
+  border: 2px solid rgba(var(--ac-colour), 0.3);
+}
+
+a {
+  color: rgba(var(--ac-colour), 0.3);
+}
+
+a:visited {
+  color: auto;
+}
+
+a:hover {
+  color: rgba(var(--ac-colour), 0.6);
+}
+
+.container.skinny {
+  width: 75%;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Utils</title>
+    
+    <link rel="stylesheet" href="assets/styles.css?v=<?php echo time(); ?>" />
+  </head>
+  <body>
+    <div class="container skinny">
+      <h2>Table of Contents</h2>
+
+      <ul>
+        <li><a href="#statCalc">Stat Calc</a></li>
+      </ul>
+    </div>
+
+    <div class="container" id="statCalc">
+      <h1>Stat Calc</h1>
+
+      <hr>
+
+      <div class="grid" style="--columns: 2">
+        <div class="header">Level</div>
+        <div><input type="number" min="1" id="level" max="100" value="100"></input></div>
+
+        <div class="header">Nature</div>
+        <div><select id="nature">
+          <option value="adamant">Adamant</option>
+          <option value="bashful">Bashful</option>
+          <option value="bold">Bold</option>
+          <option value="brave">Brave</option>
+          <option value="calm">Calm</option>
+          <option value="careful">Careful</option>
+          <option value="docile">Docile</option>
+          <option value="gentle">Gentle</option>
+          <option value="hardy">Hardy</option>
+          <option value="hasty">Hasty</option>
+          <option value="impish">Impish</option>
+          <option value="jolly">Jolly</option>
+          <option value="lax">Lax</option>
+          <option value="mild">Mild</option>
+          <option value="modest">Modest</option>
+          <option value="naive">Naive</option>
+          <option value="naughty">Naughty</option>
+          <option value="quiet">Quiet</option>
+          <option value="quirky">Quirky</option>
+          <option value="rash">Rash</option>
+          <option value="relaxed">Relaxed</option>
+          <option value="sassy">Sassy</option>
+          <option value="serious">Serious</option>
+          <option value="timid">Timid</option>
+        </select></div>
+      </div>
+
+      <div class="grid" style="--columns: 5">
+        <div class="header">Stat</div>
+        <div class="header">Base</div>
+        <div class="header">EVs</div>
+        <div class="header">IVs</div>
+        <div class="header">Result</div>
+
+        <div>HP</div>
+        <div><input type="number" min="1" id="hp-bas" max="255" value="1"></input></div>
+        <div><input type="number" min="0" id="hp-evs" max="252" value="0" step="4" ></input></div>
+        <div><input type="number" min="0" id="hp-ivs" max="31" value="20"></input></div>
+        <div id="hp-calc"></div>
+
+        <div>Attack</div>
+        <div><input type="number" min="1" id="atk-bas" max="255" value="1"></input></div>
+        <div><input type="number" min="0" id="atk-evs" max="252" value="0" step="4" ></input></div>
+        <div><input type="number" min="0" id="atk-ivs" max="31" value="20"></input></div>
+        <div id="atk-calc"></div>
+
+        <div>Defence</div>
+        <div><input type="number" min="1" id="def-bas" max="255" value="1"></input></div>
+        <div><input type="number" min="0" id="def-evs" max="252" value="0" step="4" ></input></div>
+        <div><input type="number" min="0" id="def-ivs" max="31" value="20"></input></div>
+        <div id="def-calc"></div>
+
+        <div>Sp. Atk</div>
+        <div><input type="number" min="1" id="spa-bas" max="255" value="1"></input></div>
+        <div><input type="number" min="0" id="spa-evs" max="252" value="0" step="4" ></input></div>
+        <div><input type="number" min="0" id="spa-ivs" max="31" value="20"></input></div>
+        <div id="spa-calc"></div>
+
+        <div>Sp. Def</div>
+        <div><input type="number" min="1" id="spd-bas" max="255" value="1"></input></div>
+        <div><input type="number" min="0" id="spd-evs" max="252" value="0" step="4" ></input></div>
+        <div><input type="number" min="0" id="spd-ivs" max="31" value="20"></input></div>
+        <div id="spd-calc"></div>
+
+        <div>Speed</div>
+        <div><input type="number" min="1" id="spe-bas" max="255" value="1"></input></div>
+        <div><input type="number" min="0" id="spe-evs" max="252" value="0" step="4" ></input></div>
+        <div><input type="number" min="0" id="spe-ivs" max="31" value="20"></input></div>
+        <div id="spe-calc"></div>
+      </div>
+    </div>
+
+    <script src="assets/statCalcScript.js?v=<?php echo time(); ?>"></script>
+  </body>
+</html>
