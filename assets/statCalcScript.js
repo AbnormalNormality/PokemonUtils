@@ -116,7 +116,6 @@ function snapToBounds(inputElement) {
   let value = inputElement.value;
   const min = parseInt(inputElement.getAttribute("min"));
   const max = parseInt(inputElement.getAttribute("max"));
-  console.log(min, max);
 
   if (min && value < min) {
     value = min;
