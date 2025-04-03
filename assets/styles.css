@@ -139,3 +139,17 @@ a:hover {
   margin: 2.5% 10%;
   border-radius: 10px;
 }
+
+div#latestCommitAuthor {
+  font-weight: bold;
+}
+
+div#latestCommitDate {
+  font-style: italic;
+  text-decoration: underline;
+  padding-bottom: 10px;
+}
+
+div#latestCommitMessage {
+  text-indent: 2.5%;
+}
