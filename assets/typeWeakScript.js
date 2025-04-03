@@ -41,31 +41,45 @@ const buttonColours = {
   dragon: ["#a6f", "#005"],
   ice: ["#9ff", "#066"],
 
-  dark: ["#977", "2000"],
+  dark: ["#b99", "#422"],
   fairy: ["#f9f", "#606"],
 };
 
-for (const [type, colours] of Object.entries(buttonColours)) {
-  const [backgroundColour, foregroundColour] = colours;
+function updateTypeColours() {
+  for (const [type, colours] of Object.entries(buttonColours)) {
+    let [backgroundColour, foregroundColour] = colours;
 
-  const button = document.getElementById(type);
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      [backgroundColour, foregroundColour] = [
+        foregroundColour,
+        backgroundColour,
+      ];
+    }
 
-  const parent = button.parentElement;
-  parent.style.backgroundColor = backgroundColour;
-  parent.style.color = foregroundColour;
+    const button = document.getElementById(type);
 
-  const span = parent.querySelector("span");
-  span.style.backgroundColor = backgroundColour;
-  span.style.color = foregroundColour;
-  span.style.borderColor = foregroundColour;
+    const parent = button.parentElement;
+    parent.style.backgroundColor = backgroundColour;
+    parent.style.color = foregroundColour;
 
-  button.addEventListener("change", updateWeaknesses);
+    const span = parent.querySelector("span");
+    span.style.backgroundColor = backgroundColour;
+    span.style.color = foregroundColour;
+    span.style.borderColor = foregroundColour;
 
-  const div = document.getElementById(type + "-header");
-  div.style.backgroundColor = backgroundColour;
-  div.style.color = foregroundColour;
-  div.style.borderColor = foregroundColour;
+    button.addEventListener("change", updateWeaknesses);
+
+    const div = document.getElementById(type + "-header");
+    div.style.backgroundColor = backgroundColour;
+    div.style.color = foregroundColour;
+    div.style.borderColor = foregroundColour;
+  }
 }
+
+updateTypeColours();
+
+const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+darkModeQuery.addEventListener("change", updateTypeColours);
 
 const typeWeaknesses = {
   normal: { fighting: 2, ghost: 0 },

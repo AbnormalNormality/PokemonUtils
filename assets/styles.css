@@ -11,7 +11,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-colour-1: #777;
+    --bg-colour-1: #333;
+    --bg-colour-2: #555;
+    --bg-colour-3: #777;
+    --bg-colour-4: #444;
+  
+    --fg-colour: #aaa;
+  
+    --ac-colour: 255, 255, 0;
   }
 }
 
@@ -125,4 +132,10 @@ a:hover {
 
 .type {
   border: 2px solid var(--fg-colour);
+}
+
+.small {
+  border: 1px solid var(--fg-colour);
+  margin: 2.5% 10%;
+  border-radius: 10px;
 }
