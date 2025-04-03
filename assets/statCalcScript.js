@@ -56,7 +56,7 @@ function calcStat(
   if (stat == "hp") {
     return first + level + 10;
   } else {
-    return Math.floor(first + 5 * natureBoost);
+    return Math.floor((first + 5) * natureBoost);
   }
 }
 
