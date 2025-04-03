@@ -3,9 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <title>Pokemon Utils</title>
 
-    <link rel="stylesheet" href="assets/styles.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
     <div class="container skinny">
@@ -29,7 +33,7 @@
 
       <hr />
 
-      <div class="grid" style="--columns: 4">
+      <div class="grid" style="--columns: 5">
         <div>
           <label class="toggle-button">
             <input type="checkbox" id="normal" />
@@ -146,7 +150,7 @@
 
       <hr class="small"/>
 
-      <div class="grid" style="--columns: 4">
+      <div class="grid" style="--columns: 6">
         <div class="type" id="normal-header">Normal</div>
         <div id="normal-weakness"></div>
         <div class="type" id="fighting-header">Fighting</div>
@@ -354,8 +358,8 @@
       </div>
     </div>
 
-    <script src="assets/statCalcScript.js?v=<?php echo time(); ?>"></script>
-    <script src="assets/typeWeakScript.js?v=<?php echo time(); ?>"></script>
-    <script src="assets/latestCommitScript.js?v=<?php echo time(); ?>"></script>
+    <script src="assets/statCalcScript.js"></script>
+    <script src="assets/typeWeakScript.js"></script>
+    <script src="assets/latestCommitScript.js"></script>
   </body>
 </html>
