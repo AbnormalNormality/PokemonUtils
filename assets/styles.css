@@ -11,7 +11,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-colour-1: #000;
+    --bg-colour-1: #777;
   }
 }
 
@@ -32,7 +32,7 @@ body {
   margin: 5% auto;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -40,21 +40,20 @@ h1 {
 }
 
 hr {
-  border: 2px solid var(--fg-colour);;
+  border: 2px solid var(--fg-colour);
   margin: 2.5% 5%;
   border-radius: 10px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-columns: repeat(var(--columns, 1), 1fr);
   gap: 10px;
-  margin: 20px 15%;;
+  margin: 20px 15%;
 }
 
 .grid * {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--bg-colour-3);
@@ -70,20 +69,26 @@ hr {
   background-color: var(--bg-colour-4);
 }
 
-input, select {
+input,
+select {
   border: 2px solid rgba(var(--ac-colour), 0.1);
-  width: 100%;
-  height: 100%;
   box-sizing: border-box;
   font-size: inherit;
 }
 
-input:hover, select:hover {
+input:not([type="checkbox"]),
+select {
+  width: 100%;
+  height: 100%;
+}
+
+input:hover,
+select:hover {
   border: 2px solid rgba(var(--ac-colour), 0.3);
 }
 
 a {
-  color: rgba(var(--ac-colour), 0.3);
+  color: rgba(var(--ac-colour), 0.6);
 }
 
 a:visited {
@@ -91,9 +96,33 @@ a:visited {
 }
 
 a:hover {
-  color: rgba(var(--ac-colour), 0.6);
+  color: rgba(var(--ac-colour), 0.9);
 }
 
 .container.skinny {
   width: 75%;
+}
+
+.toggle-button input {
+  display: none;
+}
+
+.toggle-button {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+.toggle-button input + span {
+  transition: all 0.3s ease;
+  border: 2px solid var(--fg-colour);
+}
+
+.toggle-button input:checked + span {
+  text-decoration: underline;
+}
+
+.type {
+  border: 2px solid var(--fg-colour);
 }

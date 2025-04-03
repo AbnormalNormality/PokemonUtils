@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokemon Utils</title>
-    
+
     <link rel="stylesheet" href="assets/styles.css?v=<?php echo time(); ?>" />
   </head>
   <body>
@@ -12,46 +12,212 @@
       <h2>Table of Contents</h2>
 
       <ul>
+        <li><a href="#typeWeak">Type Weaknesses</a></li>
         <li><a href="#statCalc">Stat Calc</a></li>
       </ul>
+    </div>
+
+    <div class="container" id="typeWeak">
+      <h1>Type Weaknesses</h1>
+
+      <hr />
+
+      <div class="grid" style="--columns: 4">
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="normal" />
+            <span>Normal</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="fighting" />
+            <span>Fighting</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="flying" />
+            <span>Flying</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="poison" />
+            <span>Poison</span>
+          </label>
+        </div>
+
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="ground" />
+            <span>Ground</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="rock" />
+            <span>Rock</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="bug" />
+            <span>Bug</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="ghost" />
+            <span>Ghost</span>
+          </label>
+        </div>
+
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="steel" />
+            <span>Steel</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="fire" />
+            <span>Fire</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="water" />
+            <span>Water</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="grass" />
+            <span>Grass</span>
+          </label>
+        </div>
+
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="electric" />
+            <span>Electric</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="psychic" />
+            <span>Psychic</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="dragon" />
+            <span>Dragon</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="ice" />
+            <span>Ice</span>
+          </label>
+        </div>
+
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="dark" />
+            <span>Dark</span>
+          </label>
+        </div>
+        <div>
+          <label class="toggle-button">
+            <input type="checkbox" id="fairy" />
+            <span>Fairy</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="grid" style="--columns: 4">
+        <div class="type" id="normal-header">Normal</div>
+        <div id="normal-weakness"></div>
+        <div class="type" id="fighting-header">Fighting</div>
+        <div id="fighting-weakness"></div>
+        <div class="type" id="flying-header">Flying</div>
+        <div id="flying-weakness"></div>
+        <div class="type" id="poison-header">Poison</div>
+        <div id="poison-weakness"></div>
+        <div class="type" id="ground-header">Ground</div>
+        <div id="ground-weakness"></div>
+        <div class="type" id="rock-header">Rock</div>
+        <div id="rock-weakness"></div>
+        <div class="type" id="bug-header">Bug</div>
+        <div id="bug-weakness"></div>
+        <div class="type" id="ghost-header">Ghost</div>
+        <div id="ghost-weakness"></div>
+        <div class="type" id="steel-header">Steel</div>
+        <div id="steel-weakness"></div>
+        <div class="type" id="fire-header">Fire</div>
+        <div id="fire-weakness"></div>
+        <div class="type" id="water-header">Water</div>
+        <div id="water-weakness"></div>
+        <div class="type" id="grass-header">Grass</div>
+        <div id="grass-weakness"></div>
+        <div class="type" id="electric-header">Electric</div>
+        <div id="electric-weakness"></div>
+        <div class="type" id="psychic-header">Psychic</div>
+        <div id="psychic-weakness"></div>
+        <div class="type" id="dragon-header">Dragon</div>
+        <div id="dragon-weakness"></div>
+        <div class="type" id="ice-header">Ice</div>
+        <div id="ice-weakness"></div>
+        <div class="type" id="dark-header">Dark</div>
+        <div id="dark-weakness"></div>
+        <div class="type" id="fairy-header">Fairy</div>
+        <div id="fairy-weakness"></div>
+      </div>
     </div>
 
     <div class="container" id="statCalc">
       <h1>Stat Calc</h1>
 
-      <hr>
+      <hr />
 
       <div class="grid" style="--columns: 2">
         <div class="header">Level</div>
-        <div><input type="number" min="1" id="level" max="100" value="100"></input></div>
+        <div>
+          <input type="number" min="1" id="level" max="100" value="100" />
+        </div>
 
         <div class="header">Nature</div>
-        <div><select id="nature">
-          <option value="adamant">Adamant</option>
-          <option value="bashful">Bashful</option>
-          <option value="bold">Bold</option>
-          <option value="brave">Brave</option>
-          <option value="calm">Calm</option>
-          <option value="careful">Careful</option>
-          <option value="docile">Docile</option>
-          <option value="gentle">Gentle</option>
-          <option value="hardy">Hardy</option>
-          <option value="hasty">Hasty</option>
-          <option value="impish">Impish</option>
-          <option value="jolly">Jolly</option>
-          <option value="lax">Lax</option>
-          <option value="mild">Mild</option>
-          <option value="modest">Modest</option>
-          <option value="naive">Naive</option>
-          <option value="naughty">Naughty</option>
-          <option value="quiet">Quiet</option>
-          <option value="quirky">Quirky</option>
-          <option value="rash">Rash</option>
-          <option value="relaxed">Relaxed</option>
-          <option value="sassy">Sassy</option>
-          <option value="serious">Serious</option>
-          <option value="timid">Timid</option>
-        </select></div>
+        <div>
+          <select id="nature">
+            <option value="adamant">Adamant (+Atk, -SpA)</option>
+            <option value="bashful">Bashful (+SpA, -SpA)</option>
+            <option value="bold">Bold (+Def, -Atk)</option>
+            <option value="brave">Brave (+Atk, -Spe)</option>
+            <option value="calm">Calm (+SpD, -Atk)</option>
+            <option value="careful">Careful (+SpD, -SpA)</option>
+            <option value="docile">Docile (+Def, -Def)</option>
+            <option value="gentle">Gentle (+SpD, -Def)</option>
+            <option value="hardy">Hardy (+Atk, -Atk)</option>
+            <option value="hasty">Hasty (+Spe, -Def)</option>
+            <option value="impish">Impish (+Def, -SpA)</option>
+            <option value="jolly">Jolly (+Spe, -SpA)</option>
+            <option value="lax">Lax (+Def, -SpD)</option>
+            <option value="lonely">Lonely (+Atk, -Def)</option>
+            <option value="mild">Mild (+SpA, -Def)</option>
+            <option value="modest">Modest (+SpA, -Atk)</option>
+            <option value="naive">Naive (+Spe, -SpD)</option>
+            <option value="naughty">Naughty (+Atk, -SpD)</option>
+            <option value="quiet">Quiet (+SpA, -Spe)</option>
+            <option value="quirky">Quirky (+SpD, -SpD)</option>
+            <option value="rash">Rash (+SpA, -SpD)</option>
+            <option value="relaxed">Relaxed (+Def, -Spe)</option>
+            <option value="sassy">Sassy (+SpD, -Spe)</option>
+            <option value="serious">Serious (+Spe, -Spe)</option>
+            <option value="timid">Timid (+Spe, -Atk)</option>
+          </select>
+        </div>
       </div>
 
       <div class="grid" style="--columns: 5">
@@ -62,43 +228,122 @@
         <div class="header">Result</div>
 
         <div>HP</div>
-        <div><input type="number" min="1" id="hp-bas" max="255" value="1"></input></div>
-        <div><input type="number" min="0" id="hp-evs" max="252" value="0" step="4" ></input></div>
-        <div><input type="number" min="0" id="hp-ivs" max="31" value="20"></input></div>
+        <div>
+          <input type="number" min="1" id="hp-bas" max="255" value="100" />
+        </div>
+        <div>
+          <input
+            type="number"
+            min="0"
+            id="hp-evs"
+            max="252"
+            value="0"
+            step="4"
+          />
+        </div>
+        <div>
+          <input type="number" min="0" id="hp-ivs" max="31" value="20" />
+        </div>
         <div id="hp-calc"></div>
 
         <div>Attack</div>
-        <div><input type="number" min="1" id="atk-bas" max="255" value="1"></input></div>
-        <div><input type="number" min="0" id="atk-evs" max="252" value="0" step="4" ></input></div>
-        <div><input type="number" min="0" id="atk-ivs" max="31" value="20"></input></div>
+        <div>
+          <input type="number" min="1" id="atk-bas" max="255" value="100" />
+        </div>
+        <div>
+          <input
+            type="number"
+            min="0"
+            id="atk-evs"
+            max="252"
+            value="0"
+            step="4"
+          />
+        </div>
+        <div>
+          <input type="number" min="0" id="atk-ivs" max="31" value="20" />
+        </div>
         <div id="atk-calc"></div>
 
         <div>Defence</div>
-        <div><input type="number" min="1" id="def-bas" max="255" value="1"></input></div>
-        <div><input type="number" min="0" id="def-evs" max="252" value="0" step="4" ></input></div>
-        <div><input type="number" min="0" id="def-ivs" max="31" value="20"></input></div>
+        <div>
+          <input type="number" min="1" id="def-bas" max="255" value="100" />
+        </div>
+        <div>
+          <input
+            type="number"
+            min="0"
+            id="def-evs"
+            max="252"
+            value="0"
+            step="4"
+          />
+        </div>
+        <div>
+          <input type="number" min="0" id="def-ivs" max="31" value="20" />
+        </div>
         <div id="def-calc"></div>
 
         <div>Sp. Atk</div>
-        <div><input type="number" min="1" id="spa-bas" max="255" value="1"></input></div>
-        <div><input type="number" min="0" id="spa-evs" max="252" value="0" step="4" ></input></div>
-        <div><input type="number" min="0" id="spa-ivs" max="31" value="20"></input></div>
+        <div>
+          <input type="number" min="1" id="spa-bas" max="255" value="100" />
+        </div>
+        <div>
+          <input
+            type="number"
+            min="0"
+            id="spa-evs"
+            max="252"
+            value="0"
+            step="4"
+          />
+        </div>
+        <div>
+          <input type="number" min="0" id="spa-ivs" max="31" value="20" />
+        </div>
         <div id="spa-calc"></div>
 
         <div>Sp. Def</div>
-        <div><input type="number" min="1" id="spd-bas" max="255" value="1"></input></div>
-        <div><input type="number" min="0" id="spd-evs" max="252" value="0" step="4" ></input></div>
-        <div><input type="number" min="0" id="spd-ivs" max="31" value="20"></input></div>
+        <div>
+          <input type="number" min="1" id="spd-bas" max="255" value="100" />
+        </div>
+        <div>
+          <input
+            type="number"
+            min="0"
+            id="spd-evs"
+            max="252"
+            value="0"
+            step="4"
+          />
+        </div>
+        <div>
+          <input type="number" min="0" id="spd-ivs" max="31" value="20" />
+        </div>
         <div id="spd-calc"></div>
 
         <div>Speed</div>
-        <div><input type="number" min="1" id="spe-bas" max="255" value="1"></input></div>
-        <div><input type="number" min="0" id="spe-evs" max="252" value="0" step="4" ></input></div>
-        <div><input type="number" min="0" id="spe-ivs" max="31" value="20"></input></div>
+        <div>
+          <input type="number" min="1" id="spe-bas" max="255" value="100" />
+        </div>
+        <div>
+          <input
+            type="number"
+            min="0"
+            id="spe-evs"
+            max="252"
+            value="0"
+            step="4"
+          />
+        </div>
+        <div>
+          <input type="number" min="0" id="spe-ivs" max="31" value="20" />
+        </div>
         <div id="spe-calc"></div>
       </div>
     </div>
 
     <script src="assets/statCalcScript.js?v=<?php echo time(); ?>"></script>
+    <script src="assets/typeWeakScript.js?v=<?php echo time(); ?>"></script>
   </body>
 </html>
