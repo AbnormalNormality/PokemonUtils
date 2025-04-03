@@ -84,7 +84,15 @@ darkModeQuery.addEventListener("change", updateTypeColours);
 const typeWeaknesses = {
   normal: { fighting: 2, ghost: 0 },
   fighting: { flying: 2, psychic: 2, fairy: 2, rock: 0.5, bug: 0.5 },
-  flying: { rock: 2, electric: 2, ice: 2, fighting: 0.5, bug: 0.5, grass: 0.5 },
+  flying: {
+    rock: 2,
+    electric: 2,
+    ice: 2,
+    ground: 0,
+    fighting: 0.5,
+    bug: 0.5,
+    grass: 0.5,
+  },
   poison: {
     ground: 2,
     psychic: 2,
